@@ -4,7 +4,8 @@ import './index.css'
 import {createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './components/Layout'
 import Index, {loader as indexLoader} from './pages/Index'
-import Nosotros from './pages/Nosotros'
+import Nosotros, {action as nosotrosAction} from './pages/Nosotros'
+import Editar, {loader as loaderEditar, action as actionEditar} from './pages/Editar'
 
 const router = createBrowserRouter([
   {
@@ -18,7 +19,14 @@ const router = createBrowserRouter([
       },
       {
         path: '/nosotros',
-        element: <Nosotros />
+        element: <Nosotros />,
+        action: nosotrosAction
+      },
+      {
+        path: '/editar/:editarId',
+        element: <Editar />,
+        loader: loaderEditar,
+        action: actionEditar
       }
     ]
   }
