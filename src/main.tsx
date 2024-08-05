@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import {createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './components/Layout'
-import Index, {loader as indexLoader} from './pages/Index'
-import Nosotros, {action as nosotrosAction} from './pages/Nosotros'
+import Index from './pages/Index'
+import Nosotros from './pages/Nosotros'
 import Editar, {loader as loaderEditar, action as actionEditar} from './pages/Editar'
+import { loader as indexLoader, action as nosotrosAction } from './utils/utils'
 
 const router = createBrowserRouter([
   {

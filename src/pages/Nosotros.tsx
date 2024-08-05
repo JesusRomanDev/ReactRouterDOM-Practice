@@ -1,28 +1,5 @@
-import { useNavigate, Form, useActionData, redirect } from "react-router-dom"
-export async function action({request}){
+import { useNavigate, Form, useActionData } from "react-router-dom"
 
-  const formData = await request.formData();
-  const datos = Object.fromEntries(formData);
-  const nombre = formData.get('name');
-  console.log(nombre);
-  console.log(datos);
-
-  const errores = [];
-  if(nombre.length === 0){
-    errores.push('Campo nombre falta');
-    return errores;
-  }
-
-  const url = 'http://localhost:4000/users';
-  await fetch(url, {
-    method: 'POST',
-    body: JSON.stringify(datos),
-    headers: {
-      'Content-Type': 'application/json'
-      }
-  });
-  return redirect('/')
-}
 
 const Nosotros = () => {
     const errores = useActionData() as string[];

@@ -1,11 +1,5 @@
 import { useLoaderData, Link, useNavigate } from "react-router-dom"
-export async function loader() {
-    const url = 'http://localhost:4000/users';
-    const respuesta = await fetch(url);
-    const resultado = await respuesta.json();
 
-    return resultado;
-}
 
 type Datos = {
     id: number,
